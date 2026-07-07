@@ -62,11 +62,14 @@ function ContactForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const text = encodeURIComponent(
-            `Hello Alex! 👋\n\n*Name:* ${form.name}\n*Email:* ${form.email}\n*Subject:* ${form.subject}\n\n*Message:*\n${form.message}\n\n_Sent via portfolio contact form_`
-        );
-        const url = `https://wa.me/${personalInfo.whatsapp}?text=${text}`;
-        window.open(url, '_blank');
+        const text = `Hello Anshid 👋\n\n*Name:* ${form.name}\n*Email:* ${form.email}\n*Subject:* ${form.subject}\n\n*Message:*\n${form.message}\n\n_Sent from portfolio contact form_`;
+        const encodedText = encodeURIComponent(text);
+        const whatsappUrl = `https://wa.me/${personalInfo.whatsapp}?text=${encodedText}`;
+
+        window.open(whatsappUrl, '_blank');
+
+        setForm({ name: '', email: '', subject: '', message: '' });
+        setFocused('');
         setSubmitted(true);
         setTimeout(() => setSubmitted(false), 4000);
     };
@@ -96,8 +99,8 @@ function ContactForm() {
                 >
                     <CheckCircle size={32} />
                 </motion.div>
-                <h3 className="font-display font-bold text-white text-xl">WhatsApp Opened!</h3>
-                <p className="text-white/50 text-sm">Your message has been pre-filled in WhatsApp. Just hit send!</p>
+                <h3 className="font-display font-bold text-white text-xl">Success!</h3>
+                <p className="text-white/50 text-sm">Your message has been sent successfully. Thanks for reaching out!</p>
             </motion.div>
         );
     }
@@ -177,12 +180,12 @@ function ContactForm() {
                 className="btn-primary flex items-center justify-center gap-3 mt-2 py-4 w-full"
             >
                 <MessageCircle size={18} />
-                Send via WhatsApp
+                Send Message
                 <Send size={15} />
             </motion.button>
 
             <p className="text-white/25 text-xs text-center font-mono">
-                → Opens WhatsApp with your message pre-filled
+                → Your message will be sent to WhatsApp
             </p>
         </motion.form>
     );
