@@ -32,7 +32,7 @@ function ContactInfo() {
                                 {item.icon}
                             </div>
                             <div>
-                                <div className="text-white/40 text-xs font-mono mb-0.5">{item.label}</div>
+                                <div className="text-white/70 text-xs font-mono mb-0.5">{item.label}</div>
                                 <div className="text-white/80 text-sm font-medium">{item.value}</div>
                             </div>
                         </a>
@@ -42,7 +42,7 @@ function ContactInfo() {
                                 {item.icon}
                             </div>
                             <div>
-                                <div className="text-white/40 text-xs font-mono mb-0.5">{item.label}</div>
+                                <div className="text-white/70 text-xs font-mono mb-0.5">{item.label}</div>
                                 <div className="text-white/80 text-sm font-medium">{item.value}</div>
                             </div>
                         </div>
@@ -73,7 +73,7 @@ function ContactForm() {
 
     const fieldClass = (name) => `
     w-full rounded-xl px-4 py-3.5 text-sm outline-none transition-all duration-300
-    font-body text-white/85 placeholder-white/25
+    font-body text-black placeholder-black/50
     ${focused === name
             ? 'border-primary/60 bg-white/6'
             : 'border-white/8 bg-white/4 hover:border-white/15'
@@ -113,7 +113,7 @@ function ContactForm() {
         >
             <div className="grid grid-cols-2 gap-4">
                 <div className="flex flex-col gap-2">
-                    <label className="text-white/40 text-xs font-mono">Your name</label>
+                    <label className="text-white/70 text-xs font-mono">Your name</label>
                     <input
                         name="name"
                         value={form.name}
@@ -126,7 +126,7 @@ function ContactForm() {
                     />
                 </div>
                 <div className="flex flex-col gap-2">
-                    <label className="text-white/40 text-xs font-mono">Email address</label>
+                    <label className="text-white/70 text-xs font-mono">Email address</label>
                     <input
                         name="email"
                         type="email"
@@ -142,7 +142,7 @@ function ContactForm() {
             </div>
 
             <div className="flex flex-col gap-2">
-                <label className="text-white/40 text-xs font-mono">Subject</label>
+                <label className="text-white/70 text-xs font-mono">Subject</label>
                 <input
                     name="subject"
                     value={form.subject}
@@ -156,7 +156,7 @@ function ContactForm() {
             </div>
 
             <div className="flex flex-col gap-2">
-                <label className="text-white/40 text-xs font-mono">Message</label>
+                <label className="text-white/70 text-xs font-mono">Message</label>
                 <textarea
                     name="message"
                     value={form.message}
