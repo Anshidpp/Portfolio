@@ -4,7 +4,7 @@ import { TypeAnimation } from 'react-type-animation';
 import { ArrowDown, Github, Linkedin, Twitter, Download, Eye } from 'lucide-react';
 import { personalInfo } from '../portfolio';
 import my from './assets/my.jpeg'
-import myCV from './assets/anshid.pdf'
+import myCV from './assets/Anshid-cv.pdf'
 
 function ParticlesCanvas() {
   const canvasRef = useRef(null);
@@ -205,19 +205,16 @@ export default function Hero() {
               className="flex flex-wrap gap-4 justify-center lg:justify-start mb-12"
             >
               <motion.a
-                href="#projects"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
-                }}
+                href={myCV}
+                download="anshid.pdf"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="btn-primary flex items-center gap-2"
               >
-                <Eye size={16} />
-                View Projects
+                <Download size={16} />
+                Download CV
               </motion.a>
-              <motion.a
+              {/* <motion.a
                 href={myCV}
                 download="anshid.pdf"
                 whileHover={{ scale: 1.05 }}
@@ -226,7 +223,7 @@ export default function Hero() {
               >
                 <Download size={16} />
                 Download CV
-              </motion.a>
+              </motion.a> */}
             </motion.div>
 
             {/* Socials */}
